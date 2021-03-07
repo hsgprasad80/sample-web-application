@@ -1,8 +1,3 @@
-def getDockerTag(){
-        def tag = sh script: 'git rev-parse HEAD', returnStdout: true
-        return tag
-        }
-
 pipeline{   
 
   agent any
@@ -11,7 +6,7 @@ pipeline{
     githubPush()
     }
   environment{
-	    Docker_tag = getDockerTag()
+	    Docker_tag = ${env.BUILD_NUMBER}
     }
         
         stages{
