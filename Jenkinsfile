@@ -33,7 +33,7 @@ pipeline{
                   script{
 		               sh 'cp -r ../devops-training@2/target .'
                    sh 'docker build . -t hsgprasad80/devops-training:$Docker_tag'
-		                   withCredentials([stringstring(credentialsId: 'Dockerhub', variable: 'Docker')]) { 
+		                   withCredentials([string(credentialsId: 'Dockerhub', variable: 'Dockerhub')]) { 
 				                 sh 'docker login -u hsgprasad80 -p $Dockerhub'
 				                 sh 'docker push hsgprasad80/devops-training:$Docker_tag'
 			                    } 
