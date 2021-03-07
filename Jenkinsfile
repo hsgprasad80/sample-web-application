@@ -8,7 +8,7 @@ pipeline{
         stages{
 	
               stage('Quality Gate Status Check'){
-		agent {
+		        agent {
                 docker {
                 image 'maven'
                 args '-v $HOME/.m2:/root/.m2'
@@ -16,11 +16,10 @@ pipeline{
 		   }
                   steps{
                       script{
-		      withSonarQubeEnv('sonarserver') { 
+                      withSonarQubeEnv('sonarserver') { 
                       sh "mvn sonar:sonar"
                        }
-                      timeout(time: 1, unit: 'HOURS') 
-                    }
+                      
 		    	    sh "mvn clean install"
                  	}
 
