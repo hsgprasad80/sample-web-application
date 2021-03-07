@@ -6,7 +6,7 @@ pipeline{
     githubPush()
     }
   environment{
-	    Docker_tag = ${env.BUILD_NUMBER}
+	    Docker_tag = "${env.BUILD_NUMBER}"
     }
         
         stages{
