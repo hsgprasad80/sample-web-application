@@ -1,4 +1,4 @@
-- hosts: test
+- hosts: master
   tasks:
   - name: copy deployment file to kubernetes master 
     copy:
