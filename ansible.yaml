@@ -1,5 +1,5 @@
 - hosts: master
-  user: ansible
+  become: true
   tasks:
   - name: copy deployment file to kubernetes master 
     copy:
