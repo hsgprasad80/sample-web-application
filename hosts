@@ -1,2 +1,2 @@
 [master]
-10.0.148.234 ansible_user=ansible ansible_password=password
+10.0.148.234 ansible_user=ansible ansible_password=$ANSIBLE_MASTER
