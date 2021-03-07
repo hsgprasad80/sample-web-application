@@ -19,9 +19,7 @@ pipeline{
 		      withSonarQubeEnv('sonarserver') { 
                       sh "mvn sonar:sonar"
                        }
-                      timeout(time: 1, unit: 'HOURS') {
-                      
-                      }
+                      timeout(time: 1, unit: 'HOURS') 
                     }
 		    	    sh "mvn clean install"
                  	}
